@@ -106,8 +106,6 @@ void tft_start(tft_handle_t* tft){
     tft_send_cmd(tft, CMD_SLPOUT);
     vTaskDelay(pdMS_TO_TICKS(WAKE_TIME_MS));
 
-    // COLOR HANDLING
-    // READ ON THIS THING PLEASEEEE
     tft_send_cmd(tft, CMD_MADCTL);   
     uint8_t madctl = 0x08;
     tft_send_data(tft, &madctl, 1);
